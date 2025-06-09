@@ -2,9 +2,9 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-   {/*   <p>This page is public.</p> */}
+    <div className="container">
+      <h1>Welcome to the Public Home Page</h1>
+      <p>You can view this page without signing in.</p>
     </div>
   );
 };

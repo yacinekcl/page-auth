@@ -5,9 +5,9 @@ const Dashboard = () => {
   const { user } = useUser();
 
   return (
-    <div>
+    <div className="container">
       <h1>Dashboard</h1>
-      <p>Welcome, {user.firstName}!</p>
+      <p>Hello, {user.firstName}! You're signed in 🎉</p>
     </div>
   );
 };

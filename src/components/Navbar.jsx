@@ -1,19 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+import './Navbar.css'; // Optional: if you want to separate styles
 
 const Navbar = () => {
   return (
-    <nav style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
-      <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
-      <Link to="/dashboard" style={{ marginRight: "1rem" }}>Dashboard</Link>
+    <nav className="navbar">
+      <Link to="/" className="nav-link">Home</Link>
+      <Link to="/dashboard" className="nav-link">Dashboard</Link>
 
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
+      <div className="auth-button">
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className="sign-in-btn">Sign In</button>
+          </SignInButton>
+        </SignedOut>
+      </div>
     </nav>
   );
 };
